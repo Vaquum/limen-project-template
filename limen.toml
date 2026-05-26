@@ -1,0 +1,5 @@
+[python]
+version = "3.10.8"
+
+[store]
+backup_remote = ""    # paste your git remote URL here, e.g. git@github.com:user/my-project.git
