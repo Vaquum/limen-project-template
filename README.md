@@ -4,7 +4,7 @@
   <br>
 </h1>
 
-<h3 align="center">limen-project-template: A starting point for YAML-driven ML experiments with Limen.</h3>
+<h3 align="center">limen-project-template: A starting point for manifest-driven Limen experiments.</h3>
 
 <p align="center">
   <a href="#value-proposition">Value Proposition</a> •
