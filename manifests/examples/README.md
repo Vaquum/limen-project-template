@@ -8,8 +8,8 @@ Ready-to-use manifest examples. Edit one of these or build your own from scratch
 # validate
 limen validate manifests/examples/logreg_binary.yaml
 
-# commit to store
-limen commit manifests/examples/logreg_binary.yaml
+# copy an example, set metadata.mode: production, then commit
+limen commit manifests/my_strategy.yaml
 # → prints: manifest://sha256:abc123
 
 # browse committed manifests

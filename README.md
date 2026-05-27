@@ -25,7 +25,6 @@ Limen lets you define, run, and track machine learning experiments entirely in Y
 pip install vaquum-limen
 limen new my-project
 cd my-project
-source venv/bin/activate
 ```
 
 See [manifests/examples/README.md](manifests/examples/README.md) for the full workflow.
