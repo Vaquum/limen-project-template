@@ -37,7 +37,7 @@ my-project/
     examples/          ← ready-to-use examples, edit or build your own
     committed/         ← managed by limen, do not edit manually
   results/             ← experiment outputs, one folder per run
-  limen.toml           ← project config: Python version, backup remote
+  limen.toml           ← project config: backup remote
   .gitignore
   LICENSE
   README.md
