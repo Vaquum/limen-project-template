@@ -24,4 +24,6 @@ __pycache__/
 *.ipynb_checkpoints
 *.ipynb
 
+# Development runs are exploratory and local-only.
+# Committed-manifest results (results/<hash>/) are kept and backed up.
 results/dev/
