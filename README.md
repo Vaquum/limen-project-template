@@ -82,20 +82,58 @@ my-project/
 
 # Backup
 
-Set `backup_remote` in `limen.toml`, then:
+Backup pushes your project to a git remote you own. **Use a fresh, empty
+repository** — a brand-new repo defaults to the `main` branch, which matches
+your project, so backup and restore line up with no git fiddling.
+
+**1. Create an empty repository.** Either is fine:
+
+```bash
+gh repo create my-project --private        # GitHub CLI — one command
+```
+
+…or make one in the browser at <https://github.com/new> (leave it empty — no
+README, no .gitignore, no license).
+
+**2. Point `backup_remote` at it** in `limen.toml`:
+
+```toml
+[store]
+backup_remote = "git@github.com:user/my-project.git"
+```
+
+(You can also set this when you create the project:
+`limen new my-project --backup-remote git@github.com:user/my-project.git`.)
+
+**3. Back up** — this snapshots your project and pushes it:
 
 ```bash
 limen backup
 ```
 
-Restoring on a new machine:
+The committed manifest store, project config, and committed-manifest results
+(`results/<hash>/`) are backed up. Development runs under `results/dev/` are
+local-only and never pushed.
+
+## Restore on a new machine
 
 ```bash
 pip install vaquum-limen
 limen new my-project --from git@github.com:user/my-project.git
 ```
 
-The manifest store, project config, and committed-manifest results are backed up. Development runs under `results/dev/` are local-only and never pushed.
+## Using git directly
+
+`backup_remote` is a normal git remote and your project is a normal git repo,
+so you can always push and clone by hand instead:
+
+```bash
+git push git@github.com:user/my-project.git HEAD     # back up
+git clone git@github.com:user/my-project.git         # restore
+```
+
+This is the escape hatch if a backup ever needs a force-push or a specific
+branch — `limen backup` never force-pushes, so it hands those cases to you.
 
 # License
 
